@@ -131,8 +131,8 @@
   --popover-foreground: var(--grey-100);
   --primary: var(--green-500);
   --primary-foreground: var(--green-700);
-  --secondary: var(--green-100);
-  --secondary-foreground: var(--green-700);
+  --secondary: var(--green-700);
+  --secondary-foreground: var(--green-500);
   --muted: var(--grey-500);
   --muted-foreground: var(--grey-300);
   --accent: var(--grey-500);
@@ -150,8 +150,8 @@
   --sidebar-foreground: var(--grey-100);
   --sidebar-primary: var(--green-500);
   --sidebar-primary-foreground: var(--green-700);
-  --sidebar-accent: var(--grey-500);
-  --sidebar-accent-foreground: var(--grey-100);
+  --sidebar-accent: var(--green-700);
+  --sidebar-accent-foreground: var(--green-500);
   --sidebar-border: var(--grey-400);
   --sidebar-ring: var(--grey-300);
 }
