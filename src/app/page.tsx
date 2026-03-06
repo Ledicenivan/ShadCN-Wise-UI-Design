@@ -44,26 +44,17 @@ export default function Home() {
       {/* Total balance + actions */}
       <section className="space-y-4">
         <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
-        <p className="text-3xl font-bold tracking-tight">1.00 EUR</p>
+        <p className="text-3xl font-bold tracking-tight">2.00 EUR</p>
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Send
+          <Button size="sm" variant="default">
+            Send money
           </Button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" variant="secondary">
             Add money
           </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" variant="outline" className="gap-1">
-                Request
-                <ChevronDown className="size-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Request from bank account</DropdownMenuItem>
-              <DropdownMenuItem>Request from card</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button size="sm" variant="secondary">
+            Request money
+           </Button>
         </div>
       </section>
 
