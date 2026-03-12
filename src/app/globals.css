@@ -159,6 +159,17 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    transition:
+      background-color 0.25s ease-out,
+      color 0.25s ease-out,
+      border-color 0.25s ease-out;
+  }
+  html,
+  body {
+    transition:
+      background-color 0.25s ease-out,
+      color 0.25s ease-out,
+      border-color 0.25s ease-out;
   }
   body {
     @apply bg-background text-foreground;
@@ -167,9 +178,9 @@
 
 /* Hide scrollbar while keeping scroll (e.g. cards row) */
 .scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+  display: none;             /* Chrome, Safari, Opera */
 }

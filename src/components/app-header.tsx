@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ChevronRight } from "lucide-react"
 
@@ -22,13 +23,9 @@ export function AppHeader() {
   return (
     <header className="mt-16 flex h-14 shrink-0 bg-background">
       <div className="mx-auto flex h-full w-full max-w-[976px] items-center gap-4 px-4">
-      <SidebarTrigger className="-ml-1" />
-      {/* DESIGNER: Replace with your logo asset or SVG; Wise uses green "WISE" wordmark */}
-      <div className="flex items-center gap-2">
-        <span className="text-xl font-bold text-primary">WISE</span>
-      </div>
       <div className="flex flex-1" />
       <div className="flex items-center gap-2">
+        <ThemeToggle />
         <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
           Earn €90
         </Button>
