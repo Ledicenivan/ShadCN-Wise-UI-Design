@@ -42,49 +42,52 @@ const RECENT_TRANSACTIONS = [
 export default function Home() {
   return (
     <div className="mx-auto flex w-full max-w-[976px] flex-1 flex-col gap-14 px-6 pb-6 pt-14">
-      {/* Total balance + actions */}
-      <section className="space-y-4">
-        <div className="space-y-0">
-          <p className="text-sm font-medium text-muted-foreground">Total balance</p>
-          <h2 className="text-3xl font-bold tracking-tight">2.00 EUR</h2>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button size="sm" variant="default">
-            Send money
-          </Button>
-          <Button size="sm" variant="secondary">
-            Add money
-          </Button>
-          <Button size="sm" variant="secondary">
-            Request money
-           </Button>
-        </div>
-      </section>
+      {/* Total balance + Cards */}
+      <div className="flex flex-col gap-6">
+        {/* Total balance + actions */}
+        <section className="space-y-4">
+          <div className="space-y-0">
+            <p className="text-sm font-medium text-muted-foreground">Total balance</p>
+            <h2 className="text-3xl font-bold tracking-tight">2.00 EUR</h2>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" variant="default">
+              Send money
+            </Button>
+            <Button size="sm" variant="secondary">
+              Add money
+            </Button>
+            <Button size="sm" variant="secondary">
+              Request money
+             </Button>
+          </div>
+        </section>
 
-      {/* Currency account cards */}
-      <section className="scrollbar-hide overflow-x-auto">
-        <div className="flex gap-3">
-        {CURRENCY_ACCOUNTS.map((account) => (
-          <Card key={account.code} className="h-[206px] w-[256px] shrink-0 bg-card">
-            <CardHeader className="flex flex-row items-center justify-start space-y-0 pb-2">
-              <Image
-                src={account.flag}
-                alt=""
-                width={48}
-                height={48}
-                className="size-12 shrink-0 rounded-full object-cover"
-                aria-hidden
-              />
-              <CardTitle className="text-base font-medium">{account.label}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-1">
-              <p className="text-xs text-muted-foreground">Account - {account.accountId}</p>
-              <p className="text-2xl font-bold">{account.balance}</p>
-            </CardContent>
-          </Card>
-        ))}
-        </div>
-      </section>
+        {/* Currency account cards */}
+        <section className="scrollbar-hide overflow-x-auto overflow-y-hidden">
+          <div className="flex gap-3">
+          {CURRENCY_ACCOUNTS.map((account) => (
+            <Card key={account.code} className="h-[206px] w-[256px] shrink-0 bg-card">
+              <CardHeader className="flex flex-row items-center justify-start space-y-0 pb-2">
+                <Image
+                  src={account.flag}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="size-12 shrink-0 rounded-full object-cover"
+                  aria-hidden
+                />
+                <CardTitle className="text-base font-medium">{account.label}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-1">
+                <p className="text-xs text-muted-foreground">Account - {account.accountId}</p>
+                <p className="text-2xl font-bold">{account.balance}</p>
+              </CardContent>
+            </Card>
+          ))}
+          </div>
+        </section>
+      </div>
 
       {/* Recent transactions */}
       <section className="space-y-4">
@@ -97,7 +100,7 @@ export default function Home() {
             See all
           </Link>
         </div>
-        <ul className="divide-y divide-border">
+        <ul>
           {RECENT_TRANSACTIONS.map((tx) => (
             <li key={tx.id} className="flex items-center gap-4 px-4 py-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted">
