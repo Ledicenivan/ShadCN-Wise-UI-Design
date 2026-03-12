@@ -90,7 +90,7 @@
   --radius: 0.625rem;
   --background: var(--grey-100);
   --foreground: var(--grey-600);
-  --card: var(--grey-100);
+  --card: var(--grey-200);
   --card-foreground: var(--grey-600);
   --popover: var(--grey-100);
   --popover-foreground: var(--grey-600);
@@ -163,4 +163,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Hide scrollbar while keeping scroll (e.g. cards row) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
